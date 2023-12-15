@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mobikart-Payment Options</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"rel="stylesheet"/>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"rel="stylesheet"/>
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+         <link rel="stylesheet" href="css/payment.css">
+    </head>
+    <body> <!--HEADER-->
+
+        <div class="container-fluid header bg-dark headermain">
+           <div class="row">
+             <div class="col-sm-4 mainhead">
+                <a href="shoppingcart.html"><h4 class=" head1">Shopping Cart</h4></a>
+             </div>
+             <div class="col-sm-4">
+                 <a href="shippingdetails.html"><h4 class="head1">Shipping Details</h4></a>
+             </div>
+             <div class="col-sm-4">
+                 <a href="payment.html"><h4 class="head2">Payment Options</h4></a>
+             </div>
+           </div>
+        </div>
+
+        <section>
+
+            <div class="row">
+                <div class=" left col-md-8 mb-4">
+                  <div class="card mb-4">
+                    <div class="card-header py-3">
+                      <h5 class="mb-0">Payment Method</h5>
+                    </div>
+                    <div class="insideleft">
+                    <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                        <!-- Credit card form tabs -->
+                        <ul role="tablist" class="nav bg-DARK nav-pills rounded nav-fill mb-3">
+                            <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Card </a> </li>
+                            <li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+                            <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net Banking </a> </li>
+                        </ul>
+                    </div> <!-- End -->
+                    <!-- Credit card form content -->
+                    <div class="tab-content">
+                        <!-- credit card info-->
+                        <div id="credit-card" class="tab-pane fade show active pt-3">
+                            <form role="form" id="form1" onsubmit="event.preventDefault()">
+                                <div class="form-group"> <label for="username">
+                                        <h6>Card Owner</h6>
+                                    </label> <input type="text" name="username" id="card1" placeholder="Card Owner Name" required class="form-control ">
+                                    <div class="error" id="error"></div> </div>
+                                <div class="form-group"> <label for="cardNumber">
+                                        <h6>Card number</h6>
+                                    </label>
+                                    <div class="input-group"> <input type="text" id="card2" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                        <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
+                                        <div class="error1" id="error1"></div></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <div class="form-group"> <label><span class="hidden-xs">
+                                                    <h6>Expiration Date</h6>
+                                                </span></label>
+                                            <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="text" placeholder="YY" name="" class="form-control" required> </div>
+                                            <div class="error2" id="error2"></div></div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group mb-4"> <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                            </label> <input type="text" required class="form-control"> </div>
+                                            <div class="error3" id="error3"></div></div>
+                                </div>
+                                <div class="btngrp"> <button type="button" class="subscribe btn btn-secondary"> Cancel </button>
+                                    <button type="button" value="submit" class="subscribe btn btn-dark"> Confirm Payment </button>
+                                    
+                            </form>
+                        </div>
+                    </div> <!-- End -->
+                    <!-- Paypal info -->
+                    <div id="paypal" class="tab-pane fade pt-3">
+                        <h6 class="pb-2">Select your paypal account type</h6>
+                        <div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
+                        <p> <button type="button" class="btn btn-dark "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
+                        <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                    </div> <!-- End -->
+                    <!-- bank transfer info -->
+                    <div id="net-banking" class="tab-pane fade pt-3">
+                        <div class="form-group "> <label for="Select Your Bank">
+                                <h6>Select your Bank</h6>
+                            </label> <select class="form-control" id="ccmonth">
+                                <option value="" selected disabled>--Please select your Bank--</option>
+                                <option>Axis Bank</option>
+                                <option>Bank of India</option>
+                                <option>Canara Bank</option>
+                                <option>Federal Bank</option>
+                                <option>HDFC Bank</option>
+                                <option>ICICI Bank</option>
+                                <option>Kotak Mahindra Bank</option>
+                                <option>State Bank of India</option>
+                                <option>South Indian Bank</option>
+                                <option>Yes Bank</option>
+                            </select> </div>
+                        <div class="form-group">
+                            <p>  <button type="button" class="btn btn-secondary mr-1"> Cancel</button><button type="button" class="btn btn-dark "><i class="fas fa-mobile-alt mr-2"></i> Proceed Payment</button> 
+                                </p>
+                        </div>
+                        <p class="text-muted">Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                    </div>
+                     <!-- End -->
+                    <!-- End -->
+                </div>
+                        <hr class="my-4" />
+                      
+                      </form>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="right col-md-4 mb-4">
+                  <div class="card mb-4">
+                    <div class="card-header py-3">
+                      <h5 class="mb-0 ">Summary</h5>
+                    </div>
+                    <div class="card-body">
+                      <a id="phn" href="product.html"><div class= "row border-0 px-0 mb-1 right1">
+                        <div class="col-md-4 phoneimg">
+                          <img src="Image/redmi.png" class="rounded-3 smlimg" style="width: 100px;" />
+                        </div>
+                        <div class="col-md-6 ms-3 pt-3">
+                          <span class="mb-0 text-price">REDMI Note 12 Pro </span>
+                          <p class="mb-0 text-descriptions">(Glacier Blue, 128 GB) </p>
+                          <span class="text-descriptions fw-bold">₹21,999</span> 
+                          <p class="text-descriptions mt-0">Qty:<span class="text-descriptions fw-bold">1</span>
+                          </p>
+                        </div>
+                      </div></a>
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                          Subtotal
+                          <span>₹21,999</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                          Shipping
+                          <span>Free</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                          <div>
+                            <strong>Total amount</strong>
+                            <strong>
+                              <p class="mb-0">(including TAX)</p>
+                            </strong>
+                          </div>
+                          <span><strong>₹21,999</strong></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    </section>
+
+
+
+
+        <!--Footer-->
+        <div class="container-fluid bg-dark footer1 pt-5 pb-5 ">
+            <footer class="footer">
+            
+              <ul class="social-icon">
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a></li>
+              </ul>
+              <ul class="menu">
+                <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Shop</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Help</a></li>
+          
+              </ul>
+              <p>2023 Mobikart | All Rights Reserved</p>
+            </footer>
+        
+          </div>
+        
+
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Javascript/payment.js" type="text/javascript"></script>
+</html>
